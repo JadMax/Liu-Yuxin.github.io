@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python成长之路 - Ep2 | \&gt; Liu_YX.随笔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python成长纪实 第二天 鬼迷心窍">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python成长之路 - Ep2">
+<meta property="og:url" content="http://yoursite.com/2018/02/10/Python成长之路-Ep2/index.html">
+<meta property="og:site_name" content="\&gt; Liu_YX.随笔">
+<meta property="og:description" content="Python成长纪实 第二天 鬼迷心窍">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/02/10/Python成长之路-Ep2/Python示例001.PNG">
+<meta property="og:updated_time" content="2018-02-10T16:47:38.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python成长之路 - Ep2">
+<meta name="twitter:description" content="Python成长纪实 第二天 鬼迷心窍">
+<meta name="twitter:image" content="http://yoursite.com/2018/02/10/Python成长之路-Ep2/Python示例001.PNG">
+  
+    <link rel="alternate" href="/atom.xml" title="\&gt; Liu_YX.随笔" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"><font color:"1196EE">\&gt; Liu_YX.随笔</font></a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle"><font color:"60B9F4">天道酬勤</font></a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="python成长之路-Python成长之路-Ep2" class="article article-type-python成长之路" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/Python成长之路-Ep2/" class="article-date">
+  <time datetime="2018-02-10T15:21:13.000Z" itemprop="datePublished">2018-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python成长之路 - Ep2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python成长纪实 第二天</p>
+<p>鬼迷心窍<br><a id="more"></a></p>
+<h3 id="分数约分程序"><a href="#分数约分程序" class="headerlink" title="分数约分程序"></a>分数约分程序</h3><p>以前接触到的诸如Java、C#等语言的循环，我最常用的便是for()语局。Python中不同，最先接触的便是while。</p>
+<p>这个命令相对来说还是比较简单、实用（至少对于我这个初学者来讲）的，直接在while后面添加条件即可：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#示例：计算1至99范围内所有奇数之和（包括1和99）</span></span><br><span class="line">a = <span class="number">0</span></span><br><span class="line">n = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n &lt;= <span class="number">99</span>: <span class="comment">#若变量n小于等于99，则执行循环，否则跳出。</span></span><br><span class="line">    a = a+n <span class="comment">#每次都把新的变量n的数值累加到变量a中</span></span><br><span class="line">    n = n+<span class="number">2</span> <span class="comment">#完成上一步操作后，便将n设置为下一个奇数</span></span><br><span class="line"><span class="keyword">print</span> (a) <span class="comment">#输出最后的结果a</span></span><br></pre></td></tr></table></figure>
+<p>示意图以及输出结果:<br><img src="/2018/02/10/Python成长之路-Ep2/Python示例001.PNG" alt="Python示例001"></p>
+<p>而这个程序中用到的便是最简易的循环，几个循环一套用，就完事——</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'输入分子（整数）'</span>)</span><br><span class="line">a=int(input())</span><br><span class="line">print(<span class="string">'输入分母'</span>)</span><br><span class="line">b=int(input())</span><br><span class="line">list1 = []</span><br><span class="line">list2 = []</span><br><span class="line">i_a =<span class="number">1</span></span><br><span class="line">i_b =<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i_a &lt;= a:</span><br><span class="line">    <span class="keyword">if</span> a%i_a==<span class="number">0</span>:</span><br><span class="line">        list1.append(i_a)</span><br><span class="line">        i_a=i_a+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        i_a =i_a + <span class="number">1</span></span><br><span class="line">print(<span class="string">'\n'</span>+str(a)+<span class="string">'的因数有：'</span>)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i_b &lt;= b:</span><br><span class="line">    <span class="keyword">if</span> b%i_b==<span class="number">0</span>:</span><br><span class="line">        list2.append(i_b)</span><br><span class="line">        i_b=i_b+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        i_b=i_b+<span class="number">1</span></span><br><span class="line">print(<span class="string">'\n'</span>+str(b)+<span class="string">'的因数有：'</span>)</span><br><span class="line">print(list2)</span><br><span class="line"></span><br><span class="line">num_l1 = <span class="number">0</span></span><br><span class="line">num_l2 = <span class="number">0</span></span><br><span class="line">list_gys=[]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> num_l1 &lt;= len(list1)<span class="number">-1</span>:</span><br><span class="line">    <span class="keyword">while</span> num_l2 &lt;= len(list2)<span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">if</span> list2[num_l2]==list1[num_l1]:</span><br><span class="line">            list_gys.append(list2[num_l2])</span><br><span class="line">        num_l2 = num_l2+<span class="number">1</span></span><br><span class="line">    num_l2 = <span class="number">0</span></span><br><span class="line">    num_l1 = num_l1 + <span class="number">1</span></span><br><span class="line">print(<span class="string">'\n'</span>+str(a)+<span class="string">'和'</span>+str(b)+<span class="string">'的公因数有：'</span>)</span><br><span class="line">print(list_gys)</span><br><span class="line"></span><br><span class="line">maxint=list_gys[<span class="number">-1</span>]</span><br><span class="line">print(<span class="string">'\n'</span>+<span class="string">'——其中最大公因数为：'</span>)</span><br><span class="line">print(str(maxint))</span><br><span class="line">a_=a//maxint</span><br><span class="line">b_=b//maxint</span><br><span class="line"><span class="keyword">if</span> a_ == a :</span><br><span class="line">    print(<span class="string">'\n'</span>+<span class="string">"原数无法约分，已是最简！"</span>)</span><br><span class="line">    print(str(a)+<span class="string">"/"</span>+str(b))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'\n'</span>+str(a)+<span class="string">"/"</span>+str(b)+<span class="string">" 经约分后的结果为："</span>)</span><br><span class="line">    print(str(a_)+<span class="string">"/"</span>+str(b_))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Copyright 刘玉鑫</span></span><br></pre></td></tr></table></figure>
+<p>希望以后能够写出更简洁、更实用的代码，总感觉这样太占用CPU（一堆的循环），太浪费资源……<br>但也算是进步！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/10/Python成长之路-Ep2/" data-id="cjdhnurxd0001jgu4e9r80y03" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/11/Hexo博客插入图片/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo博客插入图片
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/10/Python成长之路-Ep-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python成长之路 - Ep1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/11/Hexo博客插入图片/">Hexo博客插入图片</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/10/Python成长之路-Ep2/">Python成长之路 - Ep2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/10/Python成长之路-Ep-1/">Python成长之路 - Ep1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/10/hello-world/">你好，世界！</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 刘玉鑫<br>
+      Powered by Liu Yuxin
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
