@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/16/Python成长之路-Ep5-1/">Python成长之路-Ep5.1</a>
+      <a class="article-title" href="/2018/02/16/Python成长之路-Ep5-1/">Python成长之路-Ep5</a>
     </h1>
   
 
@@ -91,13 +91,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="文字模拟经营游戏-阶段一"><a href="#文字模拟经营游戏-阶段一" class="headerlink" title="文字模拟经营游戏 - 阶段一"></a>文字模拟经营游戏 - 阶段一</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Copyright 2018 刘玉鑫</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Import -------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment">#Define -------------------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setVar</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> name</span><br><span class="line">	<span class="keyword">global</span> data</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createNew</span><span class="params">()</span>:</span></span><br><span class="line">	name = input()</span><br><span class="line">	data = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>] <span class="comment">#[money, opend-date, reputation, plus money]</span></span><br><span class="line">	save()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">()</span>:</span></span><br><span class="line">	dataFileS = open(<span class="string">'data.pkl'</span>, <span class="string">'wb'</span>)</span><br><span class="line">	nameFileS = open(<span class="string">'name.txt'</span>, <span class="string">'wb'</span>)</span><br><span class="line"></span><br><span class="line">	pickle.dump(datas, dataFileS)</span><br><span class="line">	pickle.dump(name, nameFileS)</span><br><span class="line"></span><br><span class="line">	dataFileS.close()</span><br><span class="line">	nameFileS.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load</span><span class="params">()</span>:</span></span><br><span class="line">	dataFileL = open(<span class="string">'data.pkl'</span>, <span class="string">'rb'</span>)</span><br><span class="line">	nameFileL = open(<span class="string">'name.txt'</span>, <span class="string">'rb'</span>)</span><br><span class="line"></span><br><span class="line">	data = pickle.load(dataFileL)</span><br><span class="line">	name = pickle.load(nameFileL)</span><br><span class="line"></span><br><span class="line">	print(name)</span><br><span class="line"></span><br><span class="line">	dataFileL.close()</span><br><span class="line">	nameFileL.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showSelections</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'a) Purchase a Property'</span>)</span><br><span class="line">	print(<span class="string">'b) Sell a Property You Have'</span>)</span><br><span class="line">	print(<span class="string">'c) Do Gambling'</span>)</span><br><span class="line">	print(<span class="string">'d) Do Charity'</span>)</span><br><span class="line">	print(<span class="string">'e) Save &amp; Exit'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doOrder</span><span class="params">()</span>:</span></span><br><span class="line">	order = input()</span><br><span class="line">	<span class="keyword">if</span> order == <span class="string">'e'</span>:</span><br><span class="line">		save()</span><br><span class="line">		exit()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Main Program -------------------------------------------------------------------</span></span><br><span class="line">setVar()</span><br><span class="line"></span><br><span class="line">nameFileExist = os.path.exists(<span class="string">'name.txt'</span>)</span><br><span class="line">dataFileExist = os.path.exists(<span class="string">'data.pkl'</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">if nameFileExist == False or dataFileExist == False:</span></span><br><span class="line"><span class="string">	createNew()</span></span><br><span class="line"><span class="string">else:</span></span><br><span class="line"><span class="string">	load()</span></span><br><span class="line"><span class="string">	save()</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> nameFileExist == <span class="keyword">True</span> <span class="keyword">and</span> dataFileExist == <span class="keyword">True</span>:</span><br><span class="line">	dataFile = open(<span class="string">'data.pkl'</span>)</span><br><span class="line">	data =</span><br></pre></td></tr></table></figure>
-<p>目前仍被全局变量以及局部变量所困扰，以及数组溢出问题。</p>
-
+        <h2 id="文字模拟经营游戏-阶段一"><a href="#文字模拟经营游戏-阶段一" class="headerlink" title="文字模拟经营游戏 - 阶段一"></a>文字模拟经营游戏 - 阶段一</h2><h4 id="已完成："><a href="#已完成：" class="headerlink" title="已完成："></a>已完成：</h4><p>无</p>
+<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>全局变量、局部变量问题<br>Pickle文件保存问题<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/02/16/Python成长之路-Ep5-1/#more">多项式展开</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/16/Python成长之路-Ep5-1/" data-id="cjdopd7hb0005l0u4i9ch1vbm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/16/Python成长之路-Ep5-1/" data-id="cjdpazhqn0008rsu4agd4j0lw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -140,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/15/Python成长之路-Ep4/" data-id="cjdopd7hf0008l0u4fbhl4svh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/15/Python成长之路-Ep4/" data-id="cjdpazhqn0005rsu4lysj6rjd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -183,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/12/Python成长之路-Ep3/" data-id="cjdopd7h90004l0u4q211yxtg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/12/Python成长之路-Ep3/" data-id="cjdpazhq70004rsu4zuu7xbuz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -223,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/11/寒假作业-数学纪念/" data-id="cjdopd7hm000cl0u4fqyg04ye" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/11/寒假作业-数学纪念/" data-id="cjdpazhqn000drsu431omm64o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2018寒假/">2018寒假</a></li></ul>
@@ -266,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/11/Hexo博客插入图片/" data-id="cjdopd7gt0000l0u45l27egaf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/11/Hexo博客插入图片/" data-id="cjdpazhq70001rsu4izcs29gm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -310,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/10/Python成长之路-Ep2/" data-id="cjdopd7h10001l0u4azcysyhf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/10/Python成长之路-Ep2/" data-id="cjdpazhq70003rsu4ki3z4hp9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -372,7 +376,7 @@
       <ul>
         
           <li>
-            <a href="/2018/02/16/Python成长之路-Ep5-1/">Python成长之路-Ep5.1</a>
+            <a href="/2018/02/16/Python成长之路-Ep5-1/">Python成长之路-Ep5</a>
           </li>
         
           <li>
